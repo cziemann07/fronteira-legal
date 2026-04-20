@@ -1,7 +1,7 @@
 export type Language = "pt" | "es" | "en"
 
 export const SERVICE_NAME = "Fronteira Legal"
-export const WHATSAPP_NUMBER = "5545999999999" // placeholder
+export const WHATSAPP_NUMBER = "5545998393963" // placeholder
 
 export const translations = {
   pt: {

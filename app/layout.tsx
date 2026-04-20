@@ -1,15 +1,8 @@
 import type { Metadata, Viewport } from "next"
-import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { LanguageProvider } from "@/lib/language-context"
 import { SERVICE_NAME } from "@/lib/translations"
 import "./globals.css"
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fronteiralegal.com.br"),
@@ -79,7 +72,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#1e40af",
+  themeColor: "#1e66f5",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -91,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt" className={`${inter.variable} bg-background`}>
+    <html lang="pt" className="bg-background">
       <body className="font-sans antialiased">
         <LanguageProvider>{children}</LanguageProvider>
         {process.env.NODE_ENV === "production" && <Analytics />}

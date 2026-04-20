@@ -12,7 +12,10 @@ export function HowItWorks() {
   return (
     <section id="como-funciona" className="border-t border-border bg-background">
       <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
-        <Reveal as="h2" className="text-balance text-center text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+        <Reveal
+          as="h2"
+          className="text-balance text-center text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+        >
           {t.howItWorks.title}
         </Reveal>
 
@@ -25,7 +28,7 @@ export function HowItWorks() {
                 key={step.title}
                 as="li"
                 delay={i * 80}
-                className="relative flex flex-col gap-4 rounded-xl border border-border bg-card p-6"
+                className="card-interactive relative flex flex-col gap-4 rounded-xl border border-border bg-card p-6 shadow-sm hover:border-primary/30 hover:shadow-md"
               >
                 <div className="flex items-center gap-3">
                   <span
@@ -36,8 +39,12 @@ export function HowItWorks() {
                   </span>
                   <Icon className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
                 </div>
-                <h3 className="text-base font-semibold leading-snug text-foreground">{step.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{step.description}</p>
+                <h3 className="text-base font-semibold leading-snug text-foreground">
+                  {step.title}
+                </h3>
+                <p className="text-sm leading-5 text-muted-foreground">
+                  {step.description}
+                </p>
               </Reveal>
             )
           })}
