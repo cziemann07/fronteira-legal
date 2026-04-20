@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState, type ElementType, type ReactNode } from "react"
+import { useEffect, useRef, type ElementType, type ReactNode } from "react"
 import { cn } from "@/lib/utils"
 
 type RevealProps = {
@@ -12,26 +12,31 @@ type RevealProps = {
 
 export function Reveal({ as: Tag = "div", children, className, delay = 0 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null)
-  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     const node = ref.current
     if (!node) return
-    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
-      setVisible(true)
+
+    // Skip animation if user prefers reduced motion
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      node.classList.add("is-visible")
       return
     }
+
     const io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            setVisible(true)
+            // Use requestAnimationFrame for paint-aligned reveal
+            requestAnimationFrame(() => {
+              node.classList.add("is-visible")
+            })
             io.disconnect()
             break
           }
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" },
     )
     io.observe(node)
     return () => io.disconnect()
@@ -40,7 +45,7 @@ export function Reveal({ as: Tag = "div", children, className, delay = 0 }: Reve
   return (
     <Tag
       ref={ref as never}
-      className={cn("reveal", visible && "is-visible", className)}
+      className={cn("reveal", className)}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}

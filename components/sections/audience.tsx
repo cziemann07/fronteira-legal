@@ -9,7 +9,7 @@ export function Audience() {
 
   return (
     <section className="border-t border-border bg-muted/60">
-      <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
         <Reveal
           as="h2"
           className="text-balance text-center text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
@@ -17,7 +17,7 @@ export function Audience() {
           {t.audience.title}
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 md:mt-12 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-2 lg:grid-cols-4">
           {t.audience.items.map((item, i) => (
             <Reveal
               key={item.title}
@@ -37,7 +37,7 @@ export function Audience() {
           ))}
         </div>
 
-        <Reveal className="mx-auto mt-10 flex max-w-2xl flex-col items-center gap-4 text-center md:mt-12">
+        <Reveal className="mx-auto mt-12 flex max-w-2xl flex-col items-center gap-4 text-center md:mt-16">
           <p className="text-pretty text-[15px] leading-6 text-foreground">
             {t.audience.footer}
           </p>

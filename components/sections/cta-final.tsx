@@ -9,7 +9,7 @@ export function CTAFinal() {
 
   return (
     <section id="contato" className="bg-dark-section text-dark-section-foreground">
-      <div className="mx-auto max-w-4xl px-4 py-20 text-center md:px-6 md:py-28">
+      <div className="mx-auto max-w-4xl px-4 py-24 text-center md:px-6 md:py-32">
         <Reveal as="h2" className="text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
           {t.ctaFinal.title}
         </Reveal>
@@ -20,7 +20,7 @@ export function CTAFinal() {
         >
           {t.ctaFinal.subtitle}
         </Reveal>
-        <Reveal delay={160} className="mt-8 flex justify-center md:mt-10">
+        <Reveal delay={160} className="mt-10 flex justify-center md:mt-12">
           <WhatsAppButton size="lg" icon={<WhatsAppIcon className="h-5 w-5" />}>
             {t.ctaFinal.cta}
           </WhatsAppButton>

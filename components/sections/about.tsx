@@ -10,7 +10,7 @@ export function About() {
 
   return (
     <section className="border-t border-border bg-secondary/40">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 py-16 md:px-6 md:py-24 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 py-20 md:px-6 md:py-28 lg:grid-cols-2 lg:gap-16">
         <div className="flex flex-col gap-6">
           <Reveal as="h2" className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             {t.about.title}

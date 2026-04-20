@@ -33,7 +33,7 @@ export function WhatsAppButton({
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-md bg-accent font-medium text-accent-foreground shadow-sm transition-[background-color,transform,box-shadow] duration-150 ease-out hover:-translate-y-px hover:bg-accent/90 hover:shadow-md active:translate-y-0 active:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
+        "btn-tactile inline-flex items-center justify-center gap-2 rounded-md bg-accent font-medium text-accent-foreground shadow-sm hover:bg-accent/90 focus:outline-none",
         sizes[size],
         className,
       )}

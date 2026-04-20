@@ -11,12 +11,12 @@ export function Problem() {
 
   return (
     <section className="border-t border-border bg-secondary/40">
-      <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
         <Reveal as="h2" className="text-balance text-center text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           {t.problem.title}
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 md:mt-12 md:grid-cols-3 md:gap-6">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-3">
           {t.problem.items.map((item, i) => {
             const Icon = ICONS[i] ?? AlertCircle
             return (
@@ -33,7 +33,7 @@ export function Problem() {
           })}
         </div>
 
-        <Reveal as="p" className="mx-auto mt-10 max-w-2xl text-pretty text-center text-base leading-relaxed text-foreground md:mt-12">
+        <Reveal as="p" className="mx-auto mt-12 max-w-2xl text-pretty text-center text-base leading-relaxed text-foreground md:mt-16">
           {t.problem.footer}
         </Reveal>
       </div>

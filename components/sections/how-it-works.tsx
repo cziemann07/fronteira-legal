@@ -11,7 +11,7 @@ export function HowItWorks() {
 
   return (
     <section id="como-funciona" className="border-t border-border bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
+      <div className="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
         <Reveal
           as="h2"
           className="text-balance text-center text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
